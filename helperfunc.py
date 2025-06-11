@@ -164,14 +164,14 @@ import math
 # RCC滤波器
 def raised_cosine_filter(input_symbols, Rs, Fs_system, alpha, num_taps=48):
     """
-    @desc:	对输入的基带符号序列进行升余弦脉冲成形滤波。
-            将低速率符号序列插值到Fs_system采样率，并应用升余弦滤波器。
-    @para:	input_symbols (np.ndarray): 输入的基带符号序列 (实数)。
-    @para:	Rs (float): 符号速率 (Hz)。
-    @para:	Fs_system (float): 系统采样率 (Hz)。
-    @para:	alpha (float): 滚降系数 (0 <= alpha <= 1)。
-    @para:	num_taps (int, optional): 滤波器的抽头数。默认为48。
-    @rtrn:	np.ndarray: 经过脉冲成形后的高采样率数字基带信号。
+@desc:	对输入的基带符号序列进行升余弦脉冲成形滤波。
+        将低速率符号序列插值到Fs_system采样率，并应用升余弦滤波器。
+@para:	input_symbols (np.ndarray): 输入的基带符号序列 (实数)。
+@para:	Rs (float): 符号速率 (Hz)。
+@para:	Fs_system (float): 系统采样率 (Hz)。
+@para:	alpha (float): 滚降系数 (0 <= alpha <= 1)。
+@para:	num_taps (int, optional): 滤波器的抽头数。默认为48。
+@rtrn:	np.ndarray: 经过脉冲成形后的高采样率数字基带信号。
     """
     if not isinstance(input_symbols, np.ndarray):
         input_symbols = np.array(input_symbols, dtype=float)
